@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{025B078B-6BAD-43B3-8D9B-D24BEC8966C8}</ProjectGuid>
+    <ProjectGuid>{AE96D873-C51C-435C-A44A-635CB9863B82}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My02Sort</RootNamespace>
+    <RootNamespace>CompareSort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

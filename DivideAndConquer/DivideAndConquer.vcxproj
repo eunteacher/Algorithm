@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{23160575-A645-412E-AC21-56E996A4A319}</ProjectGuid>
+    <ProjectGuid>{540D46BF-A2E4-49CB-860C-D981E559D515}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My01Sort</RootNamespace>
+    <RootNamespace>DivideAndConquer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

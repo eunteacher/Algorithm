@@ -107,9 +107,7 @@ void MergeSort(int arr[], int start, int end)
 {
 	// 정렬할 데이터가 없다면
 	if (end - start < 1)
-	{
 		return;
-	}
 
 	// 중간값
 	int mid = (start + end) / 2;
