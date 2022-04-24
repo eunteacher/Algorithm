@@ -2,9 +2,7 @@
 #include "Timer.h"
 using namespace std;
 
-/*
-	Time 클래스를 이용해서 수행 시간 비교해보기.
-*/
+// Time 클래스를 이용해서 수행 시간 비교해보기.
 
 typedef unsigned long long BLONG;
 
