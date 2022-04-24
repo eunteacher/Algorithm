@@ -13,7 +13,7 @@ public:
 public:
 	BinaryTree()
 	{
-
+		root = NULL;
 	}
 
 	~BinaryTree()
@@ -22,12 +22,11 @@ public:
 	}
 
 public:
+	// 전위 순회
 	void PreOrder(Node* node)
 	{
 		if (node == NULL)
-		{
 			return;
-		}
 
 		cout << " " << node->Data;
 
@@ -35,12 +34,11 @@ public:
 		PreOrder(node->Right);
 	}
 
+	// 중위 순회
 	void InOrder(Node* node)
 	{
 		if (node == NULL)
-		{
 			return;
-		}
 		
 		InOrder(node->Left);
 		
@@ -49,12 +47,11 @@ public:
 		InOrder(node->Right);
 	}
 
+	// 후위 순회
 	void PostOrder(Node* node)
 	{
 		if (node == NULL)
-		{
 			return;
-		}
 
 		PostOrder(node->Left);
 		PostOrder(node->Right);
@@ -67,13 +64,12 @@ public:
 		root = node;
 	}
 
+	// 트리 노드 삭제 함수
+	// 후위 순회를 이용
 	void Destory(Node* node)
 	{
-		// PostOrder
 		if (node == NULL)
-		{
 			return;
-		}
 
 		Destory(node->Left);
 		Destory(node->Right);
@@ -90,6 +86,7 @@ public:
 		Node* Right;
 	};
 
+	// 노드 생성
 	static Node* CreateNode(T data)
 	{
 		Node* node = new Node();
@@ -99,7 +96,7 @@ public:
 
 		return node;
 	}
-
+	// 노드 삭제
 	static void DestoryNode(Node** node)
 	{
 		delete* node;

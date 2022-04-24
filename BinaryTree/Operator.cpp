@@ -1,6 +1,7 @@
 #include <string>
 #include "BinaryTree.h"
 
+// 후위 순회를 이용한 계산
 void Expression(const char* postfix, BinaryTree<char>::Node** node)
 {
 	char* str = const_cast<char*>(postfix);
@@ -36,9 +37,7 @@ void Expression(const char* postfix, BinaryTree<char>::Node** node)
 float Evaluate(BinaryTree<char>::Node* node)
 {
 	if (node == NULL)
-	{
 		return 0.0f;
-	}
 
 	switch (node->Data)
 	{

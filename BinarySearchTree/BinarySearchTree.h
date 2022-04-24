@@ -11,19 +11,15 @@ public:
 	struct Node;
 
 public:
-	BinarySearchTree()
-	{
+	BinarySearchTree() {}
 
-	}
+	~BinarySearchTree() {}
 
-	~BinarySearchTree()
-	{
-
-	}
-
+	// 삽입 함수
+	// 부모 노드보다 클 경우 왼쪽, 작을 경우 오른쪽
 	void Insert(Node** parent, Node* child)
 	{
-		if ((*parent)->Data < child->Data)
+		if ((*parent)->Data < child->Data) // 부모 노드가 자식 노드보다 작을 경우
 		{
 			if ((*parent)->Right == NULL)
 			{
@@ -34,7 +30,7 @@ public:
 				Insert(&(*parent)->Right, child);
 			}
 		}
-		else if((*parent)->Data > child->Data)
+		else if((*parent)->Data > child->Data) // // 부모 노드가 자식 노드보다 클 경우
 		{
 			if ((*parent)->Left == NULL)
 			{
@@ -46,13 +42,13 @@ public:
 			}
 		}
 	}
-
+	// 탐색 함수
+	// 입력된 데이터가 같으면 출력
+	// 작으면 왼쪽으로, 크면 오른쪽으로
 	Node* Search(Node* node, T data, int& depth)
 	{
 		if (node == NULL)
-		{
 			return NULL;
-		}
 
 		depth++;
 
@@ -71,13 +67,11 @@ public:
 
 		return NULL;
 	}
-
+	// 중위 순회
 	void InOrder(Node* node, int depth)
 	{
 		if (node == NULL)
-		{
 			return;
-		}
 
 		depth++;
 
@@ -85,15 +79,13 @@ public:
 		cout << " Data : " << node->Data << " depth : " << depth << endl;
 		InOrder(node->Right, depth);
 	}
-
+	// 삭제 함수
 	Node* Remove(Node* node, Node* parent, T data)
 	{
 		Node* remove = NULL;
 
 		if (node == NULL)
-		{
 			return NULL;
-		}
 
 		if (node->Data > data)
 		{
@@ -155,15 +147,13 @@ public:
 
 		return remove;
 	}
-
+	// 제일 작은 데이터를 가진 노드를 찾는 함수
 	Node* SearchMinValue(Node* node)
 	{
 		if (node == NULL)
-		{
 			return NULL;
-		}
 
-		if (node->Left == NULL)
+		if (node->Left == NULL) // 왼쪽의 자식 노드가 없을 경우 최솟값
 		{
 			return node;
 		}
@@ -189,7 +179,7 @@ public:
 		Node* Left;
 		Node* Right;
 	};
-
+	// 노드 생성
 	static Node* CreateNode(T data)
 	{
 		Node* node = new Node();
@@ -199,7 +189,7 @@ public:
 
 		return node;
 	}
-
+	// 노드 삭제
 	static void DestoryNode(Node** node)
 	{
 		delete *node;

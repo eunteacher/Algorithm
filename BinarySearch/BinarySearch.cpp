@@ -9,20 +9,19 @@ struct Data
 	UINT Score;
 };
 
+// 생성한 난수를 저정한 파일 읽어오는 함수
 void ReadData(Data* data)
 {
 	FILE* file;
 	fopen_s(&file, "Data.txt", "r");
 	{
 		for (UINT i = 0; i < USHRT_MAX; i++)
-		{
 			fscanf_s(file, "%d,%d", &data[i].index, &data[i].Score);
-		}
 		
 	}
 	fclose(file);
 }
-
+// 순차 탐색
 Data* SequenceSearch(Data* datas, UINT size, UINT target, OUT UINT* count)
 {
 	*count = 0;
@@ -40,7 +39,7 @@ Data* SequenceSearch(Data* datas, UINT size, UINT target, OUT UINT* count)
 
 	return result;
 }
-
+// 이진 탐색
 Data* BinarySearch(Data* datas, UINT size, UINT target, OUT UINT* count)
 {
 	*count = 0;
@@ -71,7 +70,7 @@ Data* BinarySearch(Data* datas, UINT size, UINT target, OUT UINT* count)
 }
 
 int BinaryCompareCount = 0;
-
+// STL 이진 탐색 비교 함수 
 int BinaryCompare(const void* val1, const void* val2)
 {
 	Data* data1 = (Data*)val1;
